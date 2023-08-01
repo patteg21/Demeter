@@ -1,0 +1,24 @@
+{% extends 'inhabitant/base.html' %}
+
+{% block body%}
+<h3>Active User: {{ user }}</h3>
+
+{% for person in nutrition %}
+<div>
+<h1>{{ person.inhabitant.firstName }} {{ person.inhabitant.lastName }}</h1>
+<h3>{{ person.inhabitant.status }}</h3>
+    <ul>
+        <li>ID: {{ person.inhabitant.inhabitantID }}</li>
+        <li>Height: {{ person.inhabitant.height }} inches</li>
+        <li>Weight: {{ person.inhabitant.weight }} inches</li>
+        <li>Calories Consumed:{{ person.caloriesConsumed }} calories</li>
+        <li>Fat Consumed:{{ person.fatConsumed }} grams</li>
+        <li>Sodium Consumed: {{ person.sodiumConsumed }} grams</li>
+        <li>Fiber Consumed: {{ person.fiberConsumed }} grams</li>
+        <li>Protein Consumed: {{ person.proteinConsumed }} grams</li>
+    </ul>
+</div>
+{% endfor %}
+
+
+{% endblock body %}
