@@ -15,16 +15,8 @@ class InhabitantForm(forms.ModelForm):
             "status",
             ]
 
-class OrderFoodForm(forms.ModelForm):
+class ContainerForm(forms.ModelForm):
     class Meta:
-        model = DailyNutrition
-        fields =[
-        "dailyNutrition",
-        "inhabitant",
-        "dateStamp",
-        "caloriesConsumed", 
-        "fatConsumed",
-        "sodiumConsumed", 
-        "fiberConsumed",
-        "proteinConsumed",
+        model = Container
+        fields = [
         ]

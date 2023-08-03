@@ -42,14 +42,14 @@
     <nav class="nav-bar">
         <ul> 
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'health' %}">Monitor</a></li>
+            <li><a href="{% url 'monitor' %}">Monitor</a></li>
             <li><a href="{% url 'interface' %}">Interface</a></li>
             <li><a href="{% url 'movement' %}">Movement</a></li>
             <li><a href="{% url 'order' %}">Order</a></li>
             <li><a href="{% url 'admin:index' %}">Admin</a></li>
         </ul>
     </nav>
-
+    <h3>Active User: {{ user }}</h3>
     {% block body %}
 
     {% endblock body %}

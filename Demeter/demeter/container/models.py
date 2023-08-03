@@ -3,14 +3,10 @@ from django.core.validators import MaxValueValidator,MinLengthValidator
 
 # Create your models here.
 class Container(models.Model):
-    containerID = models.CharField(max_length=64, primary_key=True, blank=False)
+    containerID = models.AutoField(primary_key=True, blank=False)
 
     rationPacks = models.IntegerField(default=1, blank=False)
-    # validators=[
-    #     # MaxValueValidator(25),
-    #     # MinLengthValidator(1),]
 
-    # need to determine how the sensor works and how it gets information
     sensorContainer = models.CharField(max_length=64, null=True, blank=True)
 
     def __str__(self) -> str:
@@ -19,7 +15,7 @@ class Container(models.Model):
 
 
 class TypeRation(models.Model):
-    rationID = models.CharField(max_length=64, primary_key=True)
+    rationID = models.AutoField(primary_key=True, blank=False)
     rationImg = models.ImageField(default=None, blank=True)
     rationType = models.CharField(max_length=64, default=None)
     weight = models.IntegerField(default=0)
@@ -45,10 +41,13 @@ class RationPack(models.Model):
         related_name="RationPack")
     
     # the capacity of rations within a ration pack
-    raiotns = models.IntegerField(default=1)
+    rations = models.IntegerField(default=1)
     
     # need to determine how the sensor works and how it gets information
     sensorRationPack = models.CharField(max_length=64, null=True, blank=True)
+
+    def __str__(self):
+        return f"Ration Pack: {self.typeRation}"
 
 
 

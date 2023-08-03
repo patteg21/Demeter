@@ -3,11 +3,36 @@
 {% block body%}
 <div>
 <h1></h1>
+
+This is an 
+
+{% if numcon == 25 %}
+<h3>MAX CONTAINERS</h3>
+{% else %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Container</button>
+</form>
+{% endif %}
+
+
 <ul>
     <li>Containers: {{ numcon }} </li>
     <li>Ration Packs: {{ rpcon }}</li>
-    <li>Rations: {{ trcon }} </li>
+    <li>Rations: {{ rpcon.rations }} </li>
 </ul>
+
+{% for container in containers %}
+<h3>{{ container }}</h3>
+<h4>Ration Pack Count: {{ container.RationPack.all.count }} </h4> 
+    <ul> 
+        {% for rationpack in container.RationPack.all %}
+        <li>{{ rationpack }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
 
 </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.core.validators import MinValueValidator
+import uuid
 
 # Create your models here.
 
@@ -30,14 +31,15 @@ class Inhabitant(models.Model):
 
 
 class DailyNutrition(models.Model):
-    # Specific date-inhabitant ID ----> Change for UUID
-    dailyNutrition = models.CharField(max_length=64, blank=True)
+    # UUID field for each instance of Daily Nutrition
+    dailyNutrition = models.UUIDField(default=uuid.uuid4, editable=True, unique=True)
     
     # FOREIGN KEYS
     inhabitant = models.ForeignKey(Inhabitant, on_delete=models.CASCADE, related_name="Nutrition")
 
     # DATE set automatically to each day that calories are registered
-    dateStamp = models.DateTimeField(default=datetime.today)
+    dateStamp = models.DateField(default=datetime.today)
+    timeStamp = models.DateTimeField(default=datetime.now)
 
     # min value set to 0,
     caloriesConsumed = models.IntegerField(default=0, blank=False, null=False, validators=[MinValueValidator(0)])
@@ -52,6 +54,6 @@ class DailyNutrition(models.Model):
     allergyDairy = models.BooleanField(default=False)
 
     def __str__ (self):
-        return f"{self.dailyNutrition}"
+        return f"{self.inhabitant} Nutrition {self.dateStamp}"
     
 
