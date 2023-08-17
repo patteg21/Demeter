@@ -136,6 +136,9 @@ def joinInhabDash(request, inhabitantID):
 
                     # finds dashers awaiting orders
                     availableDashers = Dasher.objects.filter(status="Awaiting")
+
+                    # grabs the first dasher available (replace with algorithm)
+                    dasherFirst = availableDashers[0]
                     
                     ###-----------------------------------------------###
                     #              BEST DASHER ALGORITHM                #
@@ -154,9 +157,6 @@ def joinInhabDash(request, inhabitantID):
                     #     if distanceFacility + distanceDestination 
                     
                     ###-----------------------------------------------###
-                    
-                    # grabs the first dasher available (replace with algorithm)
-                    dasherFirst = availableDashers[0]
 
                     # changes the status so that it is no longer Awaiting
                     dasherFirst.status = "In-Progress"

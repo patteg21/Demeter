@@ -23,5 +23,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("container/", include('container.urls')), #
     path((""), include('inhabitant.urls')), #inhabitant/
-    path(("storage"), include("storage.urls")),
+    path("storage/", include('storage.urls')),
 ]

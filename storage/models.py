@@ -5,34 +5,6 @@ from inhabitant.models import *
 # Create your models here.
 
 
-class Facility(models.Model):
-
-    # Primary Key
-    facilityID = models.AutoField(primary_key=True,)
-
-    # location field for Dasher to reference
-    locationX = models.IntegerField(default=0)
-    locationY = models.IntegerField(default=0)
-
-    #Type of Facility options
-    FACILITIES = [
-        ("Storage","Storage"),
-        ("Living","Living"),
-        ("Other","Other"),
-    ]
- 
-    typeFacility = models.CharField(
-        max_length=64,
-        default="Storage",
-        choices=FACILITIES,
-        null=False,
-        blank=False,
-        )
-
-
-    def __str__(self):
-        return f"{self.typeFacility} Facility {self.facilityID}"
-
 
 class Mover(models.Model):
 
