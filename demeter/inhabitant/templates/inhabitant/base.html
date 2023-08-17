@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Demeter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body class="body">
+    <h1 id="temp-headline">DEMETER</h1>
+
+    <nav class="nav-bar">
+        <ul> 
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'monitor' %}">Monitor</a></li>
+            <li><a href="{% url 'interface' %}">Interface</a></li>
+            <li><a href="{% url 'containers' %}">Containers</a></li>
+            <li><a href="{% url 'dashers' %}">Dashers</a></li>
+            <li><a href="{% url 'facilities' %}">Facilities</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+        </ul>
+    </nav>
+    <h3>Active User: {{ user }}</h3>
+    {% block body %}
+
+    {% endblock body %}
+
+</body>
+</html>

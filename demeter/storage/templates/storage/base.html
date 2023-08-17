@@ -1,0 +1,27 @@
+{% extends 'inhabitant/base.html' %}
+
+{% block body %}
+{% for dasher in dashers %}
+<h3>{{ dasher }}</h3>
+<ul>
+    <li>{{ dasher.location }}</li>
+    <li>X: {{ dasher.locationX}} Y: {{ dasher.locationY }}</li>
+    <li> {{ dasher.status }}</li>
+    {% if dasher.rationheld == None %}
+    {% else %}
+    <li>Ration Held: {{ dasher.rationheld }}</li>
+    {% endif %}
+</ul>
+<div>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="dasher" value="{{ dasher.dasherID }}">
+    <button type="submit">Move</button>
+</form>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

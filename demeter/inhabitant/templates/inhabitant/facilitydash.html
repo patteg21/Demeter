@@ -1,0 +1,10 @@
+{% extends 'inhabitant/base.html' %}
+
+{% block body%}
+<h3>{{ facility }}</h3>
+
+{% for container in containers %}
+<h4>{{ container }}</h4>
+{% endfor %}
+
+{% endblock body %}

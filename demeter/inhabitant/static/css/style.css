@@ -1,0 +1,26 @@
+.body{
+    background-color: lightblue;
+}
+
+#temp-headline{
+    text-align: center;
+}
+
+.nav-bar{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-bar > ul{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-flexbox;
+    align-self: center;
+}
+
+.nav-bar > ul > li{
+    display: inline;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
