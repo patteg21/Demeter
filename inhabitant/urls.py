@@ -7,4 +7,6 @@ urlpatterns = [
     path("interface/", views.interface ,name="interface"),
     path("containers/", views.containers, name="containers"),
     path("monitor/<str:inhabitantID>/", views.joinInhabDash, name="inhabdash"),
+    path("facilities/", views.facilities, name="facilities"),
+    path("facilities/<str:facilityID>/", views.joinFacilityDash,name="facilitydash")
 ]

@@ -20,6 +20,7 @@ class ContainerForm(forms.ModelForm):
     class Meta:
         model = Container
         fields = [
+            "location",
         ]
 
 # orders food for a person

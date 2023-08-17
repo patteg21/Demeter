@@ -1,8 +1,37 @@
 from django.db import models
 from django.core.validators import MaxValueValidator,MinLengthValidator
-from storage.models import *
+
 
 # Create your models here.
+class Facility(models.Model):
+
+    # Primary Key
+    facilityID = models.AutoField(primary_key=True,)
+
+    # location field for Dasher to reference
+    locationX = models.IntegerField(default=0)
+    locationY = models.IntegerField(default=0)
+
+    #Type of Facility options
+    FACILITIES = [
+        ("Storage","Storage"),
+        ("Living","Living"),
+        ("Sorting Area","Sorting Area"),
+        ("Other","Other"),
+    ]
+ 
+    typeFacility = models.CharField(
+        max_length=64,
+        default="Storage",
+        choices=FACILITIES,
+        null=False,
+        blank=False,
+        )
+
+    def __str__(self):
+        return f"Facility {self.facilityID} - {self.typeFacility}"
+
+
 class Container(models.Model):
     containerID = models.AutoField(primary_key=True, blank=False)
 
@@ -11,10 +40,10 @@ class Container(models.Model):
     sensorContainer = models.CharField(max_length=64, null=True, blank=True)
 
     location = models.ForeignKey(Facility,
-        on_delete=models.PROTECT,
-        blank=True,
-        null=True,
+    on_delete=models.PROTECT,
+    blank=False,
     )
+
 
     def __str__(self) -> str:
         return f"Container: {self.containerID}"
@@ -56,9 +85,9 @@ class RationPack(models.Model):
     def __str__(self):
 
         if self.rations <= 0:
-            return f"Ration Pack: {self.typeRation} - Empty"
+            return f"Ration Pack - Empty"
 
-        return f"Ration Pack: {self.typeRation}"
+        return f"Ration Pack - {self.typeRation}"
 
 
 
