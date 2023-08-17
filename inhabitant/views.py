@@ -138,57 +138,58 @@ def joinInhabDash(request, inhabitantID):
                     availableDashers = Dasher.objects.filter(status="Awaiting")
 
                     # grabs the first dasher available (replace with algorithm)
-                    dasherFirst = availableDashers[0]
+                    optimalDasher = availableDashers[0]
                     
-                    ###-----------------------------------------------###
-                    #              BEST DASHER ALGORITHM                #
+                    ###-------------------ALGORITHM-------------------------###
+
+                    # if len(availableDashers) > 1:
+                    #     optimalManhattan = (abs(potentialDasher.locationX-locationOfRation.locationX)+ abs(potentialDasher.locationY-locationOfRation.locationY)) + (abs(potentialDasher.locationX - destinationFacility.locationX) + abs(potentialDasher.locationY - destinationFacility.locationX))
+                    #     for potentialDasher in availableDashers[1:]:
+
+                    #         # the manhattan distacne to the ration facility or Destination
+                    #         distanceFacility = (abs(potentialDasher.locationX-locationOfRation.locationX)+ abs(potentialDasher.locationY-locationOfRation.locationY))
+                    #         distanceDestination = (abs(potentialDasher.locationX - destinationFacility.locationX) + abs(potentialDasher.locationY - destinationFacility.locationX))
+
+                    #         potentialManhattan = distanceFacility + distanceDestination
+
+                    #         if potentialManhattan < optimalManhattan:
+                    #             optimalManhattan = potentialManhattan
+                    #             optimalDasher = potentialDasher
+                                
                     
-
-                    # optimalDasher = None
-                    # bestManhattan = 
-                
-
-                    # for potentialDasher in availableDashers:
-
-                    #     # the manhattan distacne to the ration facility or Destination
-                    #     distanceFacility = (abs(potentialDasher.locationX-locationOfRation.locationX)+ abs(potentialDasher.locationY-locationOfRation.locationY))
-                    #     distanceDestination = (abs(potentialDasher.locationX - destinationFacility.locationX) + abs(potentialDasher.locationY - destinationFacility.locationX))
-
-                    #     if distanceFacility + distanceDestination 
-                    
-                    ###-----------------------------------------------###
+                    ##-----------------------------------------------###
 
                     # changes the status so that it is no longer Awaiting
-                    dasherFirst.status = "In-Progress"
+                    optimalDasher.status = "In-Progress"
 
                     #moves the dasher to the location of the ration
-                    dasherFirst.location = locationOfRation
-                    dasherFirst.locationX = locationOfRation.locationX
-                    dasherFirst.locationY = locationOfRation.locationY
+                    optimalDasher.location = locationOfRation
+                    optimalDasher.locationX = locationOfRation.locationX
+                    optimalDasher.locationY = locationOfRation.locationY
                     
                     #saves the change to the location
-                    dasherFirst.save()
+                    optimalDasher.save()
 
                     # Grabs ration and removes it from the rationPack
-                    dasherFirst.rationHeld = ration
+                    optimalDasher.rationHeld = ration
                     rationPack.rations -= 1
                     rationPack.save()
-                    dasherFirst.save()
+                    optimalDasher.save()
                     
                     #movement time simulation   ------> Change!!!!!!
 
                     # changes the location
-                    dasherFirst.location = destinationFacility
-                    dasherFirst.locationX = destinationFacility.locationX
-                    dasherFirst.locationY = destinationFacility.locationY
+                    optimalDasher.location = destinationFacility
+                    optimalDasher.locationX = destinationFacility.locationX
+                    optimalDasher.locationY = destinationFacility.locationY
                     
                     # saves the location change
-                    dasherFirst.save()
+                    optimalDasher.save()
                     
                     # removes the ration and saves the changes
-                    dasherFirst.rationHeld = None
-                    dasherFirst.status = "Awaiting"
-                    dasherFirst.save()
+                    optimalDasher.rationHeld = None
+                    optimalDasher.status = "Awaiting"
+                    optimalDasher.save()
 
 
 
