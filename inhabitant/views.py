@@ -11,7 +11,7 @@ from .models import *
 from container.models import *
 from storage.models import *
 
-
+#test
 # Create your views here.
 def home(request):
     return render(request,"inhabitant/base.html",{
