@@ -18,10 +18,6 @@ from .models import *
 from container.models import *
 from storage.models import *
 
-# export AZURE_CONVERSATIONS_ENDPOINT=https://default-language.cognitiveservices.azure.com/
-# export AZURE_CONVERSATIONS_KEY=a200ebcc5c8d4fa9be582b08709c82fd
-# export AZURE_CONVERSATIONS_PROJECT_NAME=demeter-chat
-# export AZURE_CONVERSATIONS_DEPLOYMENT_NAME=demeter-v1
 
 # Create your views here.
 def home(request):
@@ -89,12 +85,16 @@ def home(request):
                     if data['extraInformationKind'] == "EntitySubtype":
                         print(f"value: {data['value']}")
 
+        #topIntent of request
+        topIntent = result['result']['prediction']['topIntent']
+
+
         #grabs the entity that is being requested
         entityName = result['result']['prediction']['entities'][1]['text']
 
         if "Dasher" in entityName:
             # grabs the number associated with that dasher
-            void, dasherNumber = entityName.split(" ")
+            _ , dasherNumber = entityName.split(" ")
 
             dasher = Dasher.objects.get(dasherID=dasherNumber)
 
@@ -357,6 +357,6 @@ def joinFacilityDash(request, facilityID):
 
     return render(request, "inhabitant/facilitydash.html",{
         "facility":facility,
-        "containers":containers,
+        "containers":containers, 
 
     })
