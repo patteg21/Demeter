@@ -14,8 +14,10 @@ from storage.models import *
 #test
 # Create your views here.
 def home(request):
-    return render(request,"inhabitant/base.html",{
-        "test":"Test worked"
+    inhabitants = Inhabitant.objects.all
+
+    return render(request,"inhabitant/home.html",{
+        "inhabitants":inhabitants,
     })
 
 ###
