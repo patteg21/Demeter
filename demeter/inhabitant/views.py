@@ -1,8 +1,15 @@
+#imports for Azure AI
+import os
+import requests
+from azure.core.credentials import AzureKeyCredential
+from azure.ai.language.conversations import ConversationAnalysisClient
+
 import time
 
 from django.shortcuts import render
 from datetime import datetime
 from django.contrib import messages
+from django.conf import settings
 
 from storage.forms import *
 from .forms import *
@@ -11,14 +18,98 @@ from .models import *
 from container.models import *
 from storage.models import *
 
-#test
+# export AZURE_CONVERSATIONS_ENDPOINT=https://default-language.cognitiveservices.azure.com/
+# export AZURE_CONVERSATIONS_KEY=a200ebcc5c8d4fa9be582b08709c82fd
+# export AZURE_CONVERSATIONS_PROJECT_NAME=demeter-chat
+# export AZURE_CONVERSATIONS_DEPLOYMENT_NAME=demeter-v1
+
 # Create your views here.
 def home(request):
-    inhabitants = Inhabitant.objects.all
+    defaultOutput = "Please enter a Question"
+
+    # get the query from the user
+    if request.method == 'POST':
+        queryInput = request.POST.get('queryInput')
+        print(queryInput)
+        
+    
+        clu_endpoint = os.environ["AZURE_CONVERSATIONS_ENDPOINT"]
+        clu_key = os.environ["AZURE_CONVERSATIONS_KEY"]
+        project_name = os.environ["AZURE_CONVERSATIONS_PROJECT_NAME"]
+        deployment_name = os.environ["AZURE_CONVERSATIONS_DEPLOYMENT_NAME"]
+        
+        # analyze query
+        client = ConversationAnalysisClient(clu_endpoint, AzureKeyCredential(clu_key))
+        with client:
+            query = queryInput
+            result = client.analyze_conversation(
+                task={
+                    "kind": "Conversation",
+                    "analysisInput": {
+                        "conversationItem": {
+                            "participantId": "1",
+                            "id": "1",
+                            "modality": "text",
+                            "language": "en",
+                            "text": query
+                        },
+                        "isLoggingEnabled": False
+                    },
+                    "parameters": {
+                        "projectName": project_name,
+                        "deploymentName": deployment_name,
+                        "verbose": True
+                    }
+                }
+            )
+
+        print(f"query: {result['result']['query']}")
+        print(f"project kind: {result['result']['prediction']['projectKind']}\n")
+
+        print(f"top intent: {result['result']['prediction']['topIntent']}")
+        print(f"category: {result['result']['prediction']['intents'][0]['category']}")
+        print(f"confidence score: {result['result']['prediction']['intents'][0]['confidenceScore']}\n")
+
+        print("entities:")
+        for entity in result['result']['prediction']['entities']:
+            print(f"\ncategory: {entity['category']}")
+            print(f"text: {entity['text']}")
+            print(f"confidence score: {entity['confidenceScore']}")
+            if "resolutions" in entity:
+                print("resolutions")
+                for resolution in entity['resolutions']:
+                    print(f"kind: {resolution['resolutionKind']}")
+                    print(f"value: {resolution['value']}")
+            if "extraInformation" in entity:
+                print("extra info")
+                for data in entity['extraInformation']:
+                    print(f"kind: {data['extraInformationKind']}")
+                    if data['extraInformationKind'] == "ListKey":
+                        print(f"key: {data['key']}")
+                    if data['extraInformationKind'] == "EntitySubtype":
+                        print(f"value: {data['value']}")
+
+        #grabs the entity that is being requested
+        entityName = result['result']['prediction']['entities'][1]['text']
+
+        if "Dasher" in entityName:
+            # grabs the number associated with that dasher
+            void, dasherNumber = entityName.split(" ")
+
+            dasher = Dasher.objects.get(dasherID=dasherNumber)
+
+            demeterOutput = f"{dasher} is at {dasher.location}"
+
+            return render(request,"inhabitant/home.html",{
+                "demeterOutput":demeterOutput,
+        
+    })
 
     return render(request,"inhabitant/home.html",{
-        "inhabitants":inhabitants,
+        "demeterOutput":defaultOutput,
+        
     })
+
 
 ###
 def interface(request):

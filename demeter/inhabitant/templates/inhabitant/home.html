@@ -1,10 +1,30 @@
 {% extends 'inhabitant/base.html' %}
 
 {% block body%}
-{% for inhabitant in inhabitants %}
+<style>
+    #input-area{
+        width: 200px;
+    }
 
-<h3>{{ inhabitant }}</h3>
+    #demeter-output{
+        padding: 20px;
+    }
 
 
-{% endfor %}
+</style>
+
+<h1>Welcome to Demeter</h1>
+<p id="demeter-output">
+    {{ demeterOutput }}
+</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input id="input-area" type="text" name="queryInput" placeholder="@Demeter where is @Dasher 1">
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
 {% endblock body %}
