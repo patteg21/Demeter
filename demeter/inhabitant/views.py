@@ -5,6 +5,7 @@ from azure.core.credentials import AzureKeyCredential
 from azure.ai.language.conversations import ConversationAnalysisClient
 
 import time
+import random
 
 from django.shortcuts import render
 from datetime import datetime
@@ -17,6 +18,16 @@ from .forms import *
 from .models import *
 from container.models import *
 from storage.models import *
+
+# Demeter error messages
+def errorMessage():
+    error = [
+        "Sorry, can you please rephrase that.",
+        "Sorry, can you plese ask a different request.",
+        "I cannot understand that request.",
+        "What?????",
+    ]
+    return random.choice(error)
 
 
 # Create your views here.
@@ -85,25 +96,24 @@ def home(request):
                     if data['extraInformationKind'] == "EntitySubtype":
                         print(f"value: {data['value']}")
 
-        #topIntent of request
-        topIntent = result['result']['prediction']['topIntent']
-
-
-        #grabs the entity that is being requested
-        entityName = result['result']['prediction']['entities'][1]['text']
-
-        if "Dasher" in entityName:
-            # grabs the number associated with that dasher
-            _ , dasherNumber = entityName.split(" ")
-
-            dasher = Dasher.objects.get(dasherID=dasherNumber)
-
-            demeterOutput = f"{dasher} is at {dasher.location}"
-
+        # if there is low confidence in message, throws an error output
+        confidenceScore = result['result']['prediction']['intents'][0]['confidenceScore']
+        if confidenceScore < 0.70:
             return render(request,"inhabitant/home.html",{
-                "demeterOutput":demeterOutput,
-        
-    })
+            "demeterOutput":errorMessage,
+        })
+
+        #topIntent of request
+        topIntent = (result['result']['prediction']['topIntent']).lower()
+
+    
+        if topIntent == "order":
+            pass
+        elif topIntent == "getstatus":
+            pass
+        elif topIntent == "invoke":
+            pass
+
 
     return render(request,"inhabitant/home.html",{
         "demeterOutput":defaultOutput,
