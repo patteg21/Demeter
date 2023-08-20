@@ -19,15 +19,10 @@ from .models import *
 from container.models import *
 from storage.models import *
 
-# Demeter error messages
-def errorMessage():
-    error = [
-        "Sorry, can you please rephrase that.",
-        "Sorry, can you plese ask a different request.",
-        "I cannot understand that request.",
-        "What?????",
-    ]
-    return random.choice(error)
+# functions that are used in demeter
+from .utils import DemeterEvents as demE
+
+
 
 
 # Create your views here.
@@ -100,25 +95,40 @@ def home(request):
         confidenceScore = result['result']['prediction']['intents'][0]['confidenceScore']
         if confidenceScore < 0.70:
             return render(request,"inhabitant/home.html",{
-            "demeterOutput":errorMessage,
+            "demeterOutput":demE.errorMessage,
         })
 
         #topIntent of request
         topIntent = (result['result']['prediction']['topIntent']).lower()
 
-    
+        #defines variables that need to passed to functions
+        entities = result['result']['prediction']['entities']
+        
+        # call the correct function based on intent
+
         if topIntent == "order":
             pass
         elif topIntent == "getstatus":
-            pass
+            getStatusOutput = demE.getStatusDemeter(entities)
+            return render(request,"inhabitant/home.html",{
+                "demeterOutput":getStatusOutput,
+        
+            })
         elif topIntent == "invoke":
             pass
+
+
 
 
     return render(request,"inhabitant/home.html",{
         "demeterOutput":defaultOutput,
         
     })
+
+
+
+
+
 
 
 ###
