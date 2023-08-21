@@ -1,27 +1,51 @@
 .body{
-    background-color: white;
+    background-color: #28282B;
+    font-family: 'Roboto', sans-serif;
+
+    color: white;
     padding: 20px;
 }
 
+.demeter-figure{
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.demeter-figure > img{
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid gray;
+    height: 50px;
+}
+
 #temp-headline{
-    text-align: center;
+    padding-left: 5px;
+    text-align: left;
+    font-size: 20px;
 }
 
 .nav-bar{
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.nav-bar > ul{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: inline-flexbox;
-    align-self: center;
-}
-
-.nav-bar > ul > li{
+.nav-bar > a{
+    font-size: 20px;
     display: inline;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
+    overflow: hidden;
+    align-self: center;
+    color: white;
 }
+
+.nav-bar > a:hover {
+    color: gray;
+  }
+
+

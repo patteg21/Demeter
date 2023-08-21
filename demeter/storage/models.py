@@ -62,6 +62,6 @@ class Dasher(models.Model):
     def __str__(self):
         
         if self.rationHeld == None:
-            return f"Dasher {self.dasherID} - Empty"
+            return f"Dasher {self.dasherID}"
 
         return f"Dasher {self.dasherID}"

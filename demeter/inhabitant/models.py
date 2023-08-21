@@ -45,7 +45,7 @@ class DailyNutrition(models.Model):
     timeStamp = models.DateTimeField(default=datetime.now)
 
     # List of food Eaten. Should be [food,timeStamp]
-    foodEaten = models.TextField(null=True)
+    foodEaten = models.TextField(null=True, blank=True)
 
     # min value set to 0,
     caloriesConsumed = models.IntegerField(default=0, blank=False, null=False, validators=[MinValueValidator(0)])

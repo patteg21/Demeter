@@ -1,10 +1,11 @@
 {% extends 'inhabitant/base.html' %}
 
 {% block body%}
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% for person in nutrition %}
-<div>
-<h1><a href="{% url 'inhabdash' inhabitantID=person.inhabitant.inhabitantID %}">{{ person.inhabitant.firstName }} {{ person.inhabitant.lastName }}</a></h1>
+<div> 
+<h1 class="inhabitant-display"><a href="{% url 'inhabdash' inhabitantID=person.inhabitant.inhabitantID %}" >{{ person.inhabitant.firstName }} {{ person.inhabitant.lastName }}</a></h1>
 <h3>{{ person.inhabitant.status }}</h3>
     <ul>
         <li>ID: {{ person.inhabitant.inhabitantID }}</li>

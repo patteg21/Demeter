@@ -16,12 +16,13 @@ class DemeterEvents():
             "Sorry, can you please rephrase that.",
             "Sorry, can you plese ask a different request.",
             "I cannot understand that request.",
-            "What?????",
         ]
         return random.choice(error)
-
+        
     def orderDemeter(entities):
-        pass
+        
+        for entity in entities:
+            print(entity)
 
 
     def getStatusDemeter(entities):
@@ -40,4 +41,5 @@ class DemeterEvents():
         
 
     def invokeDemeter(entities):
-        pass
+        for entity in entities:
+            print(entity)

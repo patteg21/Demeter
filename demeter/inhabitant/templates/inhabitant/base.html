@@ -6,23 +6,26 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Demeter</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Borel&family=Hind+Siliguri&family=Roboto&family=Source+Code+Pro&display=swap" rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="body">
-    <h1 id="temp-headline">DEMETER</h1>
-
+<div class="demeter-figure">
+    <img alt="dem" src="{% static 'img/demeter-Img.png' %}">
+    <h1 id="temp-headline">Demeter</h1>
+</div>
     <nav class="nav-bar">
-        <ul> 
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'monitor' %}">Monitor</a></li>
-            <li><a href="{% url 'interface' %}">Interface</a></li>
-            <li><a href="{% url 'containers' %}">Containers</a></li>
-            <li><a href="{% url 'dashers' %}">Dashers</a></li>
-            <li><a href="{% url 'facilities' %}">Facilities</a></li>
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
-        </ul>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'monitor' %}">Monitor</a>
+        <a href="{% url 'interface' %}">Interface</a>
+        <a href="{% url 'containers' %}">Containers</a>
+        <a href="{% url 'dashers' %}">Dashers</a>
+        <a href="{% url 'facilities' %}">Facilities</a>
+        <a href="{% url 'admin:index' %}">Admin</a>
     </nav>
     <h3>Active User: {{ user }}</h3>
     {% block body %}
