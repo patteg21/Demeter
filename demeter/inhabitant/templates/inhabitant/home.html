@@ -1,29 +1,23 @@
 {% extends 'inhabitant/base.html' %}
 
 {% block body%}
-<style>
-    #input-area{
-        width: 200px;
-    }
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<h1 id="welcome-header">Welcome to Demeter</h1>
+<div class="demeter-chat">
 
-    #demeter-output{
-        padding: 20px;
-    }
+    <p id="demeter-output">
+        {{ demeterOutput }}
+    </p>
 
-
-</style>
-
-<h1>Welcome to Demeter</h1>
-<p id="demeter-output">
-    {{ demeterOutput }}
-</p>
-
-<form action="" method="post">
-    {% csrf_token %}
-    <input id="input-area" type="text" name="queryInput" placeholder="@Demeter where is @Dasher 1">
-    <button type="submit">Submit</button>
-</form>
-
+    <div class="input-area">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
+            <button id="submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
 
 
 

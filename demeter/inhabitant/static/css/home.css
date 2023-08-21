@@ -1,0 +1,46 @@
+#welcome-header{
+    text-align: center;
+}
+
+.demeter-chat{
+    text-align: center;
+    outline: 2px solid gray;
+    background-color: black;
+    padding: 5px 25px 25px 25px;
+    border-radius: 25px;
+}
+
+#demeter-output{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.input-area{
+    text-align: center;
+    
+}
+
+#user-input{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    width: 250px;
+    text-align: center;
+}
+
+#user-input::placeholder {
+    color: white;
+}
+
+#submit-button {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+

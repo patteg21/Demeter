@@ -1,5 +1,5 @@
 .body{
-    background-color: #28282B;
+    background-color: #1b1b1b;
     font-family: 'Roboto', sans-serif;
 
     color: white;
@@ -7,9 +7,14 @@
 }
 
 .demeter-figure{
+    background-color: #100c08;
+    padding:10px;
+    border-radius: 10px 10px 10px 10px;
     display: flex;
     align-items: center;
     box-sizing: content-box;
+    border: 2px solid gray;
+
 }
 
 .demeter-figure > img{
@@ -26,6 +31,7 @@
 }
 
 .nav-bar{
+    padding-top: 5px;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     justify-content: space-between;
@@ -34,14 +40,25 @@
 }
 
 .nav-bar > a{
+    border-radius: 10px;
     font-size: 20px;
     display: inline;
     text-align: center;
-    padding: 10px;
+    padding: 5px 40px 5px 40px;
+
+    background-color: #100c08;
+    border: 2px solid gray;
+
     text-decoration: none;
     overflow: hidden;
     align-self: center;
     color: white;
+}
+
+@media (max-width: 1000px) {
+    .nav-bar > a {
+        padding: 5px;
+    }
 }
 
 .nav-bar > a:hover {
