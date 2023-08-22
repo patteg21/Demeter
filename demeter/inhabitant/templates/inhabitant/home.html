@@ -4,18 +4,20 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <h1 id="welcome-header">Welcome to Demeter</h1>
-<div class="demeter-chat">
+<div class="wrapper-demeter">
+    <div class="demeter-chat">
 
-    <p id="demeter-output">
-        {{ demeterOutput }}
-    </p>
+        <p id="demeter-output">
+            {{ demeterOutput }}
+        </p>
 
-    <div class="input-area">
-        <form action="" method="post">
-            {% csrf_token %}
-            <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
-            <button id="submit-button" type="submit">Submit</button>
-        </form>
+        <div class="input-area">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
+                <button id="submit-button" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 
