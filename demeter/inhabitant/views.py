@@ -110,9 +110,13 @@ def home(request):
 
             facilities = Facility.objects.filter(typeFacility="Living")
             mealOptions = TypeRation.objects.filter(mealType=mealType)
-            inhabitants = Inhabitant.objects.all()
+
+            orderForm = True
+            
             return render(request,"inhabitant/home.html",{
-            "demeterOutput":orderOutput, 
+            "demeterOutput":orderOutput,
+            "facilityForm": FacilityForm,
+            "orderForm":orderForm,
         })
 
 

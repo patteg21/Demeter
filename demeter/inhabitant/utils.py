@@ -21,16 +21,15 @@ class DemeterEvents():
     def orderDemeter(entities):
 
         #Looks to see what meal this is 
-        mealType = entities[1]['text'].title()
+        if len(entities) >= 2:
+            mealType = entities[1]['text'].title()
 
-        mealOptions = TypeRation.objects.filter(mealType=mealType)
+            mealOptions = TypeRation.objects.filter(mealType=mealType)
 
-        print(mealOptions.RationPack)
+            orderOutput = "Great! Please select a location!"
 
-        orderOutput = "Great! Please select a location!"
-
-        #returns that back
-        return mealType, orderOutput
+            #returns that back
+            return mealType, orderOutput
 
 
     def getStatusDemeter(entities):

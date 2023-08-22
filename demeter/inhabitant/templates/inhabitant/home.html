@@ -9,6 +9,13 @@
 
         <p id="demeter-output">
             {{ demeterOutput }}
+
+            {% if orderForm %}
+            <form>
+                {{ facilityForm.as_p }}
+                <button type="submit">Order</button>
+            </form>
+            {% endif %}
         </p>
 
         <div class="input-area">
