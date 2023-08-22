@@ -12,7 +12,7 @@
         </p>
 
         <div class="input-area">
-            <form action="" method="post">
+            <form action="" method="post" autocomplete="off">
                 {% csrf_token %}
                 <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
                 <button id="submit-button" type="submit">Submit</button>

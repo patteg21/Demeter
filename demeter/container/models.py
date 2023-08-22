@@ -51,6 +51,22 @@ class Container(models.Model):
 
 
 class TypeRation(models.Model):
+    MEAL = [
+        ("Breakfast","Breakfast"),
+        ("Lunch","Lunch"),
+        ("Dinner","Dinner"),
+        ("Snack","Snack"),
+        ("Any","Any")
+    ]
+
+    mealType = models.CharField(
+        max_length=64,
+        default="Storage",
+        choices=MEAL,
+        null=False,
+        blank=False,
+    )
+
     rationID = models.AutoField(primary_key=True, blank=False)
     rationImg = models.ImageField(default=None, blank=True)
     rationType = models.CharField(max_length=64, default=None)
@@ -62,6 +78,7 @@ class TypeRation(models.Model):
 
 
 class RationPack(models.Model):
+
     rationPackID = models.CharField(max_length=64,primary_key=True)
      
     #                       --> FOREIGN KEYS
@@ -98,6 +115,8 @@ class NutrientContent(models.Model):
         blank=False,
         on_delete=models.PROTECT,
         related_name="NutrientContent")
+
+
  
 
     calories = models.IntegerField()

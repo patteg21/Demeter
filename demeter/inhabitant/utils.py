@@ -7,7 +7,6 @@ from storage.models import *
 
 """"
 DEMETER ORIENTED FUNCTIONS
-
 """
 class DemeterEvents():
     # Demeter error messages
