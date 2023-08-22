@@ -19,9 +19,18 @@ class DemeterEvents():
         return random.choice(error)
         
     def orderDemeter(entities):
-        
-        for entity in entities:
-            print(entity)
+
+        #Looks to see what meal this is 
+        mealType = entities[1]['text'].title()
+
+        mealOptions = TypeRation.objects.filter(mealType=mealType)
+
+        print(mealOptions.RationPack)
+
+        orderOutput = "Great! Please select a location!"
+
+        #returns that back
+        return mealType, orderOutput
 
 
     def getStatusDemeter(entities):

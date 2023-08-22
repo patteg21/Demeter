@@ -56,7 +56,6 @@ class TypeRation(models.Model):
         ("Lunch","Lunch"),
         ("Dinner","Dinner"),
         ("Snack","Snack"),
-        ("Any","Any")
     ]
 
     mealType = models.CharField(
