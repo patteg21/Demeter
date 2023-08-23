@@ -26,15 +26,38 @@ from .utils import DemeterEvents as demEvents
 
 
 # Create your views here.
+
 def home(request):
     defaultOutput = "Please enter a Question"
 
     # get the query from the user
     if request.method == 'POST':
-        queryInput = request.POST.get('queryInput')
-        print(queryInput)
+
+        #checks to see what form is getting submitted
+        form_name = request.POST.get('demeter-order-food')
+        print(form_name)
+
+        if form_name == "demeter-order-food":
+            inhabChoice = request.POST.get('inhabOptions')
+            mealChoice = request.POST.get('mealOptions')
+            facilityChoice = request.POST.get('facilityOptions')
+
+
+            demeterCompleteOrder = f"Thanks {inhabChoice}! I will delivery your meal to {facilityChoice}"
+            
+            return render(request,"inhabitant/home.html",{
+            "demeterOutput":demeterCompleteOrder
         
+            })
+
+            
+
+
     
+        #gets the question that is being asked
+        queryInput = request.POST.get('queryInput')
+        
+        #collects the keys that are going to be used
         clu_endpoint = os.environ["AZURE_CONVERSATIONS_ENDPOINT"]
         clu_key = os.environ["AZURE_CONVERSATIONS_KEY"]
         project_name = os.environ["AZURE_CONVERSATIONS_PROJECT_NAME"]
@@ -112,22 +135,16 @@ def home(request):
             mealOptions = TypeRation.objects.filter(mealType=mealType)
             inhabitantOptions = Inhabitant.objects.all()
 
-            print(mealOptions)
-            print(facilityOptions)
-
             orderForm = True
             
             return render(request,"inhabitant/home.html",{
-            "demeterOutput":orderOutput,
-            "inhabitantOptions":inhabitantOptions,
-            "mealOptions":mealOptions,
-            "facilityOptions":facilityOptions,
-            "orderForm":orderForm,
-        })
-
-
-
-
+                "demeterOutput":orderOutput,
+                "inhabitantOptions":inhabitantOptions,
+                "mealOptions":mealOptions,
+                "facilityOptions":facilityOptions,
+                "orderForm":orderForm,
+            })
+        
         elif topIntent == "getstatus":
             getStatusOutput = demEvents.getStatusDemeter(entities)
             return render(request,"inhabitant/home.html",{

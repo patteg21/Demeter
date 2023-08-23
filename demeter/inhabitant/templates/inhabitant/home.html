@@ -11,18 +11,20 @@
             {{ demeterOutput }}
 
             {% if orderForm %}
-            <form method="post" action="">
-                <select title="inhabOptions">
+            <form name="demeter-order-food" method="post" action="">
+                <input type="hidden" name="demeter-order-food" value="demeter-order-food">
+                {% csrf_token %}
+                <select title="inhabOptions" name="inhabOptions">
                     {% for optionInhab in inhabitantOptions %}
                     <option>{{ optionInhab }}</option>
                     {% endfor %}
                 </select>
-                <select title="mealOptions">
+                <select title="mealOptions" name="mealOptions">
                     {% for optionMeal in mealOptions %}
                     <option>{{ optionMeal }}</option>
                     {% endfor %}
                 </select>
-                <select title="facilityOptions">
+                <select title="facilityOptions" name="facilityOptions">
                     {% for optionFac in facilityOptions %}
                     <option>{{ optionFac }}</option>
                     {% endfor %}
@@ -33,7 +35,7 @@
         </p>
 
         <div class="input-area">
-            <form action="" method="post" autocomplete="off">
+            <form name="demeter-question" action="" method="post" autocomplete="off">
                 {% csrf_token %}
                 <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
                 <button id="submit-button" type="submit">Submit</button>
