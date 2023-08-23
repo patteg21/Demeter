@@ -108,14 +108,20 @@ def home(request):
         if topIntent == "order":
             mealType, orderOutput = demEvents.orderDemeter(entities)
 
-            facilities = Facility.objects.filter(typeFacility="Living")
+            facilityOptions = Facility.objects.filter(typeFacility="Living")
             mealOptions = TypeRation.objects.filter(mealType=mealType)
+            inhabitantOptions = Inhabitant.objects.all()
+
+            print(mealOptions)
+            print(facilityOptions)
 
             orderForm = True
             
             return render(request,"inhabitant/home.html",{
             "demeterOutput":orderOutput,
-            "facilityForm": FacilityForm,
+            "inhabitantOptions":inhabitantOptions,
+            "mealOptions":mealOptions,
+            "facilityOptions":facilityOptions,
             "orderForm":orderForm,
         })
 
