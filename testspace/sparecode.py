@@ -1,15 +1,25 @@
-        # try:
-        #     entityName = result['result']['prediction']['entities'][1]['text']
-        # except IndexError:
-        #     entityName = ""
+        # print(f"query: {result['result']['query']}")
+        # print(f"project kind: {result['result']['prediction']['projectKind']}\n")
 
-        # if "Dasher" in entityName:
-        #     # grabs the number associated with that dasher
-        #     _ , dasherNumber = entityName.split(" ")
+        # print(f"top intent: {result['result']['prediction']['topIntent']}")
+        # print(f"category: {result['result']['prediction']['intents'][0]['category']}")
+        # print(f"confidence score: {result['result']['prediction']['intents'][0]['confidenceScore']}\n")
 
-        #     dasher = Dasher.objects.get(dasherID=dasherNumber)
-
-        #     demeterOutput = f"{dasher} is at {dasher.location}"
-
-        #     return render(request,"inhabitant/home.html",{
-        #         "demeterOutput":demeterOutput,
+        # print("entities:")
+        # for entity in result['result']['prediction']['entities']:
+        #     print(f"\ncategory: {entity['category']}")
+        #     print(f"text: {entity['text']}")
+        #     print(f"confidence score: {entity['confidenceScore']}")
+        #     if "resolutions" in entity:
+        #         print("resolutions")
+        #         for resolution in entity['resolutions']:
+        #             print(f"kind: {resolution['resolutionKind']}")
+        #             print(f"value: {resolution['value']}")
+        #     if "extraInformation" in entity:
+        #         print("extra info")
+        #         for data in entity['extraInformation']:
+        #             print(f"kind: {data['extraInformationKind']}")
+        #             if data['extraInformationKind'] == "ListKey":
+        #                 print(f"key: {data['key']}")
+        #             if data['extraInformationKind'] == "EntitySubtype":
+        #                 print(f"value: {data['value']}")

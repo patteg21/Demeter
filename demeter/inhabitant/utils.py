@@ -26,7 +26,7 @@ class DemeterEvents():
 
             mealOptions = TypeRation.objects.filter(mealType=mealType)
 
-            orderOutput = "Here are some options for breakfast foods. Please fill out this short form."
+            orderOutput = "Here are some options for breakfast foods."
             #returns that back
             return mealType, orderOutput
 
