@@ -42,6 +42,7 @@ class Container(models.Model):
     location = models.ForeignKey(Facility,
     on_delete=models.PROTECT,
     blank=False,
+    related_name="Container"
     )
 
 

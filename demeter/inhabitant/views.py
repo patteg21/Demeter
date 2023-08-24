@@ -21,6 +21,7 @@ from storage.models import *
 
 # functions that are used in demeter
 from .utils import DemeterEvents as demEvents
+from .utils import FoodOrder as FoodOrder
 
 
 
@@ -47,24 +48,28 @@ def home(request):
             #gets the object based on person
             firstName, lastName= inhabChoice.split()
             inhabitant =Inhabitant.objects.get(firstName=firstName,lastName=lastName)
+            inhabitantID = inhabitant.inhabitantID
 
             #gets object associated with the meal
             ration = TypeRation.objects.get(rationType=mealChoice)
-
+            rationID = ration.rationID
+            
             #grabs the object based on facility
             _, facilityID, _, _ = facilityChoice.split()
             facility = Facility.objects.get(facilityID=int(facilityID))
 
+
+            #call a function to move dasher to correct place
+            FoodOrder.orderFood(inhabitantID,rationID,facilityID)
+
+
             #message that will be output after
-            demeterCompleteOrder = f"Thanks {inhabChoice}! I will delivery your meal to {facilityChoice}"
+            demeterCompleteOrder = f"Thanks {inhabitant.firstName}! I will delivery your meal to {facilityChoice}"
             
             return render(request,"inhabitant/home.html",{
             "demeterOutput":demeterCompleteOrder
         
             })
-
-            
-
 
     
         #gets the question that is being asked
