@@ -1,3 +1,7 @@
+.dasher-container{
+    padding: 0%;
+}
+
 .all-dashers-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,6 +11,7 @@
 }
 
 .dasher-wrapper{
+    margin-bottom: 10px;
     background-color: black;
     background: linear-gradient(to right, #2f2f2f, black);
     border-radius: 10px;
@@ -47,12 +52,24 @@
 }
 
 .dasher-subsection-form{
-    grid-column: 2/4;
-    padding: 0px 10px 10px 0px
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #2f2f2f;
+    grid-row: 4;
+    grid-column: 1/4;
+
 }
 
+
 .dasher-mover{
+    display: flex;
+    align-items: center;
     margin: 0%;
     padding: 0px;
     list-style: none;
+}
+
+.dasher-mover button {
+    border-radius: 10px;
+    margin-left: auto; /* Push the button to the right */
 }

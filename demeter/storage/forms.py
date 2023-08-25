@@ -12,6 +12,9 @@ class DasherMoveForm(forms.ModelForm):
         fields = [
             "location"
             ]  
+        labels = {
+            "location":""
+        }
 
 
 # allows you to choose a specifc facility    
