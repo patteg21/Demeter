@@ -11,9 +11,16 @@ class DasherMoveForm(forms.ModelForm):
         # fields = "__all__"
         fields = [
             "location"
-            ]  
+            ] 
+            
+        # the way the input will be labeled
         labels = {
             "location":""
+        }
+
+
+        widgets = {
+            'location': forms.Select(attrs={'class': 'model-form'})
         }
 
 

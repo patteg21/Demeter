@@ -26,9 +26,9 @@
             </div>
         </div>
         <div class="dasher-subsection-form">
-            <form action="" method="post" class="dasher-mover">
+            <form class="dasher-mover-form" action="" method="post">
                 {% csrf_token %}
-                {{ form.as_ul }}
+                {{ form.as_p  }}
                 <input type="hidden" name="dasher" value="{{ dasher.dasherID }}">
                 <button type="submit">Move</button>
             </form> 
