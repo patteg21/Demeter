@@ -14,31 +14,33 @@
 </head>
 
 <body class="body">
-<div class="layout-wrapper">
-    <div class="demeter-figure">
-        <img alt="dem" src="{% static 'img/demeter-Img.png' %}">
-        <h1>Demeter</h1>
+<div>
+    <div class="layout-wrapper">
+        <div class="demeter-figure">
+            <img alt="dem" src="{% static 'img/demeter-Img.png' %}">
+            <h1>Demeter</h1>
+        </div>
+        <div class="nav-area">
+            <h3>Navigation</h3>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'monitor' %}">Monitor</a></li>
+                <li><a href="{% url 'interface' %}">Interface</a></li>
+                <li><a href="{% url 'containers' %}">Containers</a></li>
+                <li><a href="{% url 'dashers' %}">Dashers</a></li>
+                <li><a href="{% url 'facilities' %}">Facilities</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            </ul>
+            <h3>General</h3>
+            <h3>Tasks</h3>
+        </div>
     </div>
-    
-
-    <div class="nav-area">
-        <h3>Navigation</h3>
-        <ul class="nav-list">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'monitor' %}">Monitor</a></li>
-            <li><a href="{% url 'interface' %}">Interface</a></li>
-            <li><a href="{% url 'containers' %}">Containers</a></li>
-            <li><a href="{% url 'dashers' %}">Dashers</a></li>
-            <li><a href="{% url 'facilities' %}">Facilities</a></li>
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
-        </ul>
-        <h3>General</h3>
-        <h3>Tasks</h3>
-    </div>
+    <div class="other-pages-bodies">
     {% block body %}
 
 
     {% endblock body %}
+    </div>
 </div>
 </body>
 </html>
