@@ -1,0 +1,40 @@
+{% extends 'inhabitant/base.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/dasher.css' %}">
+<div class="all-dashers-grid">
+{% for dasher in dashers %}
+    <div class="dasher-wrapper">
+        <h3 class="dasher-header">SCART ID# {{ dasher.dasherID }}</h3>
+        <div class="dasher-subsection">
+            <h4>Coordinates</h4>
+            <p>X: {{ dasher.locationX}} Y: {{ dasher.locationY }}</p>
+        </div>
+        <div class="dasher-subsection">
+            <h4>Task</h4>
+            <p>None</p>
+        </div>
+        <div class="dasher-subsection">
+            <h4>Status</h4>
+            <p>{{ dasher.status }}</p>
+        </div>
+        <div class="dasher-subsection">
+            <h4>Dasher Location</h4>
+            <p>{{ dasher.location }}</p>
+        </div>
+        <div class="dasher-subsection-form">
+            <form action="" method="post" class="dasher-mover">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <input type="hidden" name="dasher" value="{{ dasher.dasherID }}">
+                <button type="submit">Move</button>
+            </form> 
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

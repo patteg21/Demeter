@@ -52,7 +52,7 @@ def dashers(request):
     else:
         form = DasherMoveForm
 
-    return render(request, "storage/base.html",{
+    return render(request, "storage/dashers.html",{
         "dashers":dashers,
         "form":form,
     })

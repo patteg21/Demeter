@@ -1,0 +1,58 @@
+.all-dashers-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(30px, auto);
+
+}
+
+.dasher-wrapper{
+    background-color: black;
+    background: linear-gradient(to right, #2f2f2f, black);
+    border-radius: 10px;
+    border: 2px solid #2f2f2f;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(70px, auto);
+}
+
+.dasher-header {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    margin: 0%;
+    padding: 10px;
+}
+
+.dasher-wrapper > ul {
+    list-style: none;
+    margin: 0px;
+}
+
+.dasher-subsection{
+    margin: 0%;
+    padding: 0px 10px 10px 10px;
+}
+
+.dasher-subsection > h4{
+    margin: 0%;
+    padding: 0px;
+}
+
+.dasher-subsection > p{
+    margin: 0%;
+    padding: 0%;
+    color: gray;
+}
+
+.dasher-subsection-form{
+    grid-column: 2/4;
+    padding: 0px 10px 10px 0px
+}
+
+.dasher-mover{
+    margin: 0%;
+    padding: 0px;
+    list-style: none;
+}

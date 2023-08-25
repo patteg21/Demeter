@@ -21,13 +21,13 @@
     padding: 10px;
     align-items: center;
     box-sizing: content-box;
-    border: 2px solid gray;
+    border: 2px solid #2f2f2f;
 
 }
 
 .demeter-figure{
     padding: 10px;
-    border: 2px solid gray;
+    border: 2px solid #2f2f2f;
     background-color: black;
     border-radius: 10px 10px 10px 10px;
     display: flex;
@@ -38,7 +38,7 @@
 .demeter-figure > img{
     box-sizing: border-box;
     border-radius: 50%;
-    border: 2px solid gray;
+    border: 2px solid #2f2f2f;
     height: 50px;
 }
 
@@ -51,7 +51,7 @@
 
 .nav-area{
     padding: 0px 10px 0px 10px;
-    border: 2px solid gray;
+    border: 2px solid #2f2f2f;
     background-color: black;
     border-radius: 10px;
     grid-row: 2 / 15;
@@ -60,7 +60,7 @@
 
 .nav-area > h3{
     padding: 5px;
-    border:2px solid gray;
+    border:2px solid #2f2f2f;
     border-radius: 10px;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .nav-list > li > a:hover {
-    color: gray;
+    color: #2f2f2f;
   }
 
 
