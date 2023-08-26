@@ -3,47 +3,51 @@
 {% block body %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-<h1 id="welcome-header">Welcome to Demeter</h1>
-<div class="wrapper-demeter">
-    <div class="demeter-chat">
+<div class="home-container">
+    <h1 class="welcome-header">Task Communication &  Requests
+        <p>Coordinate tasks, allocate resources, and support astronaut well-being with real-time chat, provision requests, and profile insights.</p>
+    </h1>
+    <div class="wrapper-demeter">
+        <div class="demeter-chat">
+            <h1>Demeter Chat</h1>
 
-        <p id="demeter-output">
-            {{ demeterOutput }}
+            <p id="demeter-output">
+                {{ demeterOutput }}
 
-            {% if orderForm %}
-            <form name="demeter-order-food" method="post" action="">
-                <input type="hidden" name="demeter-order-food" value="demeter-order-food">
-                {% csrf_token %}
-                <select title="inhabOptions" name="inhabOptions">
-                    {% for optionInhab in inhabitantOptions %}
-                    <option>{{ optionInhab }}</option>
-                    {% endfor %}
-                </select>
-                <select title="mealOptions" name="mealOptions">
-                    {% for optionMeal in mealOptions %}
-                    <option>{{ optionMeal }}</option>
-                    {% endfor %}
-                </select>
-                <select title="facilityOptions" name="facilityOptions">
-                    {% for optionFac in facilityOptions %}
-                    <option>{{ optionFac }}</option>
-                    {% endfor %}
-                </select>
-                <button type="submit">Order</button>
-            </form>
-            {% endif %} 
-        </p>
+                {% if orderForm %}
+                <form name="demeter-order-food" method="post" action="">
+                    <input type="hidden" name="demeter-order-food" value="demeter-order-food">
+                    {% csrf_token %}
+                    <select title="inhabOptions" name="inhabOptions">
+                        {% for optionInhab in inhabitantOptions %}
+                        <option>{{ optionInhab }}</option>
+                        {% endfor %}
+                    </select>
+                    <select title="mealOptions" name="mealOptions">
+                        {% for optionMeal in mealOptions %}
+                        <option>{{ optionMeal }}</option>
+                        {% endfor %}
+                    </select>
+                    <select title="facilityOptions" name="facilityOptions">
+                        {% for optionFac in facilityOptions %}
+                        <option>{{ optionFac }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Order</button>
+                </form>
+                {% endif %} 
+            </p>
 
-        <div class="input-area">
-            <form name="demeter-question" action="" method="post" autocomplete="off">
-                {% csrf_token %}
-                <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
-                <button id="submit-button" type="submit">Submit</button>
-            </form>
+            <div class="input-area">
+                <form name="demeter-question" action="" method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
+                    <button id="submit-button" type="submit"><img src="{% static 'img/send-icon.png' %}" alt="Submit"></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
 
 
 {% endblock body %}

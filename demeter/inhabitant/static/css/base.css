@@ -4,7 +4,15 @@
 
     color: white;
     padding: 20px;
+    margin: 0%;
+    padding: 0%;
 }
+
+.body > div{
+    padding: 0px;
+    margin: 0%;
+}
+
 
 .layout-wrapper {
     position: fixed;
@@ -105,11 +113,12 @@
 }
 
 .nav-list > li > a:hover {
-    color: #121619;
+    color: gray;
   }
 
 
 .other-pages-bodies{
-    padding-left: 300px;
+    padding: 0px 10px 20px 320px;
+    margin: 0%;
 }
 

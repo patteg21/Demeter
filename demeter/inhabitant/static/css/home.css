@@ -1,51 +1,81 @@
-#welcome-header{
-    text-align: center;
+.home-container{
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
 }
+
+.welcome-header{
+    background-color: #0d0f0f;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    font-size: 25px;
+
+}
+
+.welcome-header > p{
+    color: gray;
+    font-size: 15px;
+}
+
+
 
 .wrapper-demeter{
     grid-row: 3;
     grid-column: 2;
 }
+
  
 .demeter-chat{
     text-align: center;
-    outline: 2px solid #2f2f2f;
-    background-color:  #0d0f0f;
-    padding: 5px 25px 25px 25px;
+    /* background-color:  #0d0f0f; */
+    padding: 0px 0px 0px 0px;
     border-radius: 25px;
+}
+
+.demeter-chat > h1{
+    text-align: left;
+    font-size: 20px;
+    padding: 10px;
 }
 
 #demeter-output{
     padding: 20px;
     text-align: center;
-    border: 2px solid white;
+    color: gray;
+    border: 2px solid gray;
     border-radius: 10px;
 }
 
 .input-area{
-    text-align: center;
-    
+    text-align: left;
 }
 
 #user-input{
-    border: 2px solid white;
+    border: 2px solid gray;
     padding: 5px;
     border-radius: 10px;
-    background-color:  #0d0f0f;
-    color: white;
-    width: 250px;
+    background-color:  transparent;
+    color: gray;
     text-align: center;
 }
 
 #user-input::placeholder {
-    color: white;
+    color: gray;
 }
 
 #submit-button {
-    border: 2px solid white;
+    border: 0px solid transparent;
     border-radius: 10px;
     padding: 5px;
-    background-color:  #0d0f0f;
-    color: white;
+    background-color:  transparent;
+    color: gray;
 }
+
+#submit-button > img{
+    height: 15px;
+}
+#submit-button:hover{
+    background-color: gray;
+}
+
 
