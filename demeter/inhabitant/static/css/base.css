@@ -1,5 +1,5 @@
 .body{
-    background-color: #1b1b1b;
+    background-color:  #0d0f0f;
     font-family: 'Roboto', sans-serif;
 
     color: white;
@@ -12,7 +12,7 @@
     top: 0;
     width: 300px;
     height: 100%;
-    background-color: #1b1b1b;
+    background-color:  #0d0f0f;
     color: #fff;
     padding: 20px;
     box-sizing: border-box;
@@ -20,7 +20,7 @@
 
 
 .demeter-nav{
-    background-color: black;
+    background-color: #0d0f0f;
     border-radius: 10px;
     padding: 10px;
     align-items: center;
@@ -32,7 +32,7 @@
 .demeter-figure{
     padding: 10px;
     border: 2px solid #2f2f2f;
-    background-color: black;
+    background-color: #0d0f0f;
     border-radius: 10px 10px 10px 10px;
     display: flex;
 
@@ -55,7 +55,7 @@
 .nav-area{
     padding: 0px 10px 0px 10px;
     border: 2px solid #2f2f2f;
-    background-color: black;
+    background-color: #0d0f0f;
     border-radius: 10px;
     grid-row: 2 / 15;
     grid-column: 1;

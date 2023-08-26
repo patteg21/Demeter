@@ -28,8 +28,11 @@
         <div class="dasher-subsection-form">
             <form class="dasher-mover-form" action="" method="post">
                 {% csrf_token %}
-                {{ form.as_p  }}
-                <input type="hidden" name="dasher" value="{{ dasher.dasherID }}">
+                <div>
+                    <img alt="location" src="{% static 'img/location-icon.png' %}">
+                    {{ form.as_p  }}
+                    <input type="hidden" name="dasher" value="{{ dasher.dasherID }}">
+                </div>
                 <button type="submit">Move</button>
             </form> 
         </div>

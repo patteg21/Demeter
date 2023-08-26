@@ -13,7 +13,7 @@
 .dasher-wrapper{
     margin-bottom: 10px;
     background-color: black;
-    background: linear-gradient(to right, #2f2f2f, black);
+    background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%));
     border-radius: 10px;
     border: 2px solid #2f2f2f;
 
@@ -53,10 +53,8 @@
 
 .dasher-subsection-form{
     border-radius: 10px;
-    padding: 10px;
-    background-color: #2f2f2f;
     /* background: linear-gradient(to right, #2f2f2f, black); */
-    border: 2px solid #2f2f2f;
+
     grid-row: 4;
     grid-column: 1/4;
 
@@ -64,36 +62,49 @@
 
 
 .dasher-mover-form {
+    padding: 0px 10px 0px 0px;
     display: flex;
     align-items: center;
 }
 
-.dasher-mover-form > p{
-    border-radius: 10px;
+.dasher-mover-form > div > p{
     margin: 0px;
-    padding: 10px 10px 10px 10px;
     /* border: 2px solid #b6ef9b;
     background-color: aqua; */
     list-style: none;
 }
 
-.dasher-mover-form>p>input{
-    background-color: aqua;
-}
 
 .dasher-mover-form > button {
-    padding: 10px;
-    font-size: 15px;
+    padding: 8px;
+    font-size: 20px;
     border-radius: 10px;
     margin-left: auto;
     border: 2px solid #b6ef9b;
     background-color: #b6ef9b;
 }
 
+.dasher-mover-form > img{
+    height: 20px;
+    margin: 0%;
+}
+
+.dasher-mover-form > div{
+    padding: 0px 0px 0px 10px;
+    margin: 0%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    background-color: #1b1d21;
+
+}
+
 .model-form{
+    margin: 0%;
     border-radius: 10px;
     border: #2f2f2f;
-    background-color: #2f2f2f;
+    background-color: #1b1d21;
     color: gray;
     padding: 12px;
     font-size: 15px;
