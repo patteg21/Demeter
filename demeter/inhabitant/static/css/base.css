@@ -1,5 +1,5 @@
 .body{
-    background-color:  #0d0f0f;
+    background-color:  #121619;
     font-family: 'Roboto', sans-serif;
 
     color: white;
@@ -12,9 +12,12 @@
     top: 0;
     width: 300px;
     height: 100%;
-    background-color:  #0d0f0f;
+    background-color:  #0d0f10;
+    border: 2px solid #121619;
     color: #fff;
-    padding: 20px;
+    padding: 0px;
+    margin: 10px;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 
@@ -25,36 +28,40 @@
     padding: 10px;
     align-items: center;
     box-sizing: content-box;
-    border: 2px solid #2f2f2f;
+    border: 2px solid #121619;
 
 }
 
 .demeter-figure{
     padding: 10px;
-    border: 2px solid #2f2f2f;
-    background-color: #0d0f0f;
-    border-radius: 10px 10px 10px 10px;
+    margin: 0%;
     display: flex;
-
+    border-bottom: 2px solid #121619;
+    width: 100%;
 }
 
 .demeter-figure > img{
     box-sizing: border-box;
     border-radius: 50%;
-    border: 2px solid #2f2f2f;
     height: 50px;
 }
 
 .demeter-figure > h1{
     padding-left: 5px;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
+}
+
+.demeter-figure > h1 > p{
+    color: #b6ef9b;
+    margin: 0%;
+    font-size: 15px;
 }
 
 
 .nav-area{
     padding: 0px 10px 0px 10px;
-    border: 2px solid #2f2f2f;
+
     background-color: #0d0f0f;
     border-radius: 10px;
     grid-row: 2 / 15;
@@ -62,13 +69,12 @@
 }
 
 .nav-area > h3{
+    color: gray;
     padding: 5px;
-    border:2px solid #2f2f2f;
     border-radius: 10px;
 }
 
 .nav-list{
-    border-radius: 10px;
     font-size: 20px;
     padding: 5px 40px 5px 40px;
     margin: 0%;
@@ -99,7 +105,7 @@
 }
 
 .nav-list > li > a:hover {
-    color: #2f2f2f;
+    color: #121619;
   }
 
 
