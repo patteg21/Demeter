@@ -36,7 +36,6 @@ def home(request):
 
         #checks to see what form is getting submitted
         form_name = request.POST.get('demeter-order-food')
-        print(form_name)
 
         if form_name == "demeter-order-food":
 
@@ -239,7 +238,7 @@ def joinInhabDash(request, inhabitantID):
 
     # creates a form to order food for that particular person
     if request.method == 'POST':
-        
+
         # Passes the Nutrient Content model in a form
         form = OrderFoodForm(request.POST)
         facilityForm = FacilityForm(request.POST)

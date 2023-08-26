@@ -3,6 +3,7 @@
 {% block body %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<style src="{% static 'js/form_validation.js' %}"></style>
 <div class="home-container">
     <h1 class="welcome-header">Task Communication &  Requests
         <p>Coordinate tasks, allocate resources, and support astronaut well-being with real-time chat, provision requests, and profile insights.</p>
@@ -39,10 +40,10 @@
             </p>
 
             <div class="input-area">
-                <form name="demeter-question" action="" method="post" autocomplete="off">
+                <form id="demeter-question" name="demeter-question" action="" method="post" autocomplete="off">
                     {% csrf_token %}
                     <input id="user-input" type="text" name="queryInput" placeholder="ex. @Demeter where is @Dasher 1">
-                    <button id="submit-button" type="submit"><img src="{% static 'img/send-icon.png' %}" alt="Submit"></button>
+                    <button id="submit-button" type="submit"><img src="{% static 'img/send-icon.png' %}" alt="submit"></button>
                 </form>
             </div>
         </div>
