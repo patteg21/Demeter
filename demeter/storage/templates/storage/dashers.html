@@ -3,6 +3,11 @@
 {% block body %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/dasher.css' %}">
+<div class="header">
+    <h1>Dasher Tracking</h1>
+</div>
+
+
 <div class="all-dashers-grid">
 {% for dasher in dashers %}
     <div class="dasher-container">

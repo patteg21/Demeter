@@ -1,3 +1,13 @@
+.header{
+    padding: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.header > h1{
+    border-bottom: 2px solid #1b1d21;
+    padding-bottom: 20px;
+}
+
 .dasher-container{
     padding: 0%;
 }
@@ -12,7 +22,7 @@
 
 .dasher-wrapper{
     margin-bottom: 10px;
-    background-color: black;
+    background-color: #0d0f0f;
     background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%));
     border-radius: 10px;
     border: 2px solid #2f2f2f;
