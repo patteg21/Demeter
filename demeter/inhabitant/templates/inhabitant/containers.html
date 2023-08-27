@@ -2,7 +2,42 @@
 
 
 {% block body%}
-<div>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/container.css' %}">
+<div class="container">
+    <div>
+        <h1 class="header">Resource Management
+            <p>This is where you see how much food is left and it’s overall status</p>
+        </h1>
+    </div>
+    <h3>Inhabitant Provisions and Resource Inventory</h3>
+    <div class="main-content">
+        <div class="resources">
+            <h3>Resource Utilization</h3>
+            <h1>62<p>%</p></h1>
+        </div>
+        <div class="requests"></div>
+        <div class="temperature"></div>
+        <div class="available-resources"></div>
+        <div class="consumption"></div>
+        <div class="water"></div>
+        <div class="provision"></div>
+        <div class="depletion"></div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
 <h1></h1>
 {% if numcon >= 100 %}
 <h3>MAX CONTAINERS</h3>
@@ -33,5 +68,5 @@
 {% endfor %}
 
 
-</div>
+</div> -->
 {% endblock %} 

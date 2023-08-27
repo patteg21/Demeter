@@ -1,0 +1,95 @@
+.container{
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.header{
+    background-color: #0d0f0f;
+    text-align: left;
+    padding: 10px 10px 15px 10px;
+    border-radius: 10px;
+    margin: 12px 0px 0px 0px;
+    font-size: 25px;
+}
+
+.header > p{
+    color: #cdcecf;
+    font-size: 15px;
+}
+
+.main-content{
+    padding: 10px 0px 0px 0px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.main-content>div{
+    border-radius: 10px;
+    background-color: #0d0f10;
+    margin: 0%;
+}
+
+.resources{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.resources > h3{
+    color: #cdcecf;
+    margin: 0px;
+    padding: 10px;
+    
+}
+
+.resources > h1{
+    color: #cdcecf;
+    margin: 0px;
+    padding: 10px;
+}
+
+.resources > h1 > p{
+    font-size: 25px;
+    display: inline;
+    vertical-align: top;
+}
+
+
+
+.requests{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.temperature{
+    grid-column: 2;
+    grid-row: 1/3;
+
+
+}
+
+.available-resources{
+    grid-column: 3/5;
+    grid-row: 1/3;
+}
+
+.consumption{
+    grid-column: 1/3;
+    grid-row: 3/6;
+}
+
+.water{
+    grid-column: 3;
+    grid-row: 3/5;
+}
+
+.provision{    
+    grid-column: 4;
+    grid-row: 3/5;
+}
+
+.depletion{
+    grid-column: 3/5;
+    grid-row: 5;
+}
