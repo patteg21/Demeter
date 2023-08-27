@@ -16,9 +16,28 @@
             <h3>Resource Utilization</h3>
             <h1>62<p>%</p></h1>
         </div>
-        <div class="requests"></div>
+        <div class="requests">
+            <h3>Resource Requests</h3>
+            <div>
+                <h4>4</h4>
+                <p>Pending Requests</p>
+            </div>
+            <div>
+                <h4>16</h4>
+                <p>Approved Requests</p>
+            </div>
+        </div>
         <div class="temperature"></div>
-        <div class="available-resources"></div>
+        <div class="available-resources">
+            <h4>Available Resources</h4>
+            <div class="resource-grid">
+
+                <!-- Create JS to randomly give color -->
+                {% for container in containers %}
+                <div id="colored-box"></div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="consumption"></div>
         <div class="water"></div>
         <div class="provision"></div>

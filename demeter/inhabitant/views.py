@@ -178,10 +178,10 @@ def containers(request):
 
 
             # will not save a container if there are 25 of more containers
-            if con.objects.count() >= 100:
-                pass
-            else:
-                form.save()
+            # if con.objects.count() >= 100:
+            #     pass
+            # else:
+            form.save()
     else:
         form = ContainerForm
 
