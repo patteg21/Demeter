@@ -30,6 +30,12 @@
     background-color: #0d0f10;
     margin: 0%;
 }
+.main-content>div>h4{
+    margin: 0px;
+    padding: 10px;
+    font-size: 18px;
+    color: #cdcecf;
+}
 
 
 .resources{
@@ -107,17 +113,17 @@
     color: #cdcecf;
 }
 
-.available-resources >h4{
-    margin: 0px;
-    padding: 10px;
-    font-size: 18px;
+.available-resources>h4{
+    color: #cdcecf;
 }
+
+
 
 .resource-grid{
     display: grid;
-    grid-template-columns: repeat(27, 1fr);
+    grid-template-columns: repeat(25, 1fr);
     grid-auto-rows: auto;
-    gap: 4px;
+    gap: 3px;
     padding: 10px 10px 10px 10px;
 }
 
@@ -132,12 +138,10 @@
 }
 
 
-
-
-
 .consumption{
     grid-column: 1/3;
     grid-row: 3/6;
+    color:#cdcecf;
 }
 
 
@@ -150,9 +154,163 @@
 .provision{    
     grid-column: 4;
     grid-row: 3/5;
+    color: #cdcecf;
 }
 
-.depletion{
+
+.resource-variety{
     grid-column: 3/5;
     grid-row: 5;
+}
+
+.resource-variety>h6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px 20px 20px 20px;
+    height: 70px;
+    width: 70px;
+    border: 10px solid #00cc76;
+    border-radius: 50%;
+}
+
+.variety-wrapper{
+    padding: 10px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+
+.pieContainer {
+    grid-column: 1;
+    height: 150px;
+    position: relative;
+  }
+  
+  .pieBackground {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+  } 
+  
+  .pie {
+    transition: all 1s;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    clip: rect(0px, 75px, 150px, 0px);
+  }
+  
+  .hold {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    clip: rect(0px, 150px, 150px, 75px);
+  }
+  
+  #other .pie {
+    background-color: #2a46d1;
+    transform:rotate(40deg);
+  }
+  
+  #medical {
+    transform: rotate(30deg);
+  }
+  
+  #medical .pie {
+    background-color: #862ffa;
+    transform: rotate(60deg);
+  }
+  
+  #food {
+    transform: rotate(90deg);
+  }
+  
+  #food .pie {
+    background-color: #00daff;
+    transform: rotate(180deg);
+  }
+  
+  #water {
+    transform: rotate(210deg);
+  }
+  
+  #water .pie {
+    background-color: #00cc76;
+    transform: rotate(160deg);
+  }
+
+  
+  .innerCircle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #0d0f0f;
+    border-radius: 100%;
+    top: 15px;
+    left: 15px; 
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
+    color: transparent;
+  }
+  .innerCircle .content {
+    position: absolute;
+    display: block;
+    width: 120px;
+    top: 30px;
+    left: 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+.variety-key{
+    grid-column: 3/5;
+    color: #cdcecf;
+}
+.variety-key>div{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.variety-key > div > h6 > div{
+    height: 15px;
+    width: 15px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+#food-color{
+    background-color: #00daff;
+}
+#water-color{
+    background-color:#00cc76;
+}
+#medical-color{
+    background-color: #862ffa;
+}
+#other-color{
+    background-color: #2a46d1;
+}
+
+.variety-key>div>h6{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    text-align: left;
+    color: #cdcecf;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.variety-key>div>p{
+    color: white;
+    text-align: right;
+    margin: 10px;
 }

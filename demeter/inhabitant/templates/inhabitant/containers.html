@@ -27,23 +27,49 @@
                 <p>Approved Requests</p>
             </div>
         </div>
-        <div class="temperature"></div>
+        <div class="temperature">
+            <h4>Operational Temperature</h4>
+        </div>
         <div class="available-resources">
             <h4>Available Resources</h4>
             <div class="resource-grid">
-
                 <!-- Create JS to randomly give color -->
                 {% for container in containers %}
                 <div id="colored-box"></div>
                 {% endfor %}
             </div>
         </div>
-        <div class="consumption"></div>
-        <div class="water"></div>
-        <div class="provision"></div>
-        <div class="depletion"></div>
+        <div class="consumption">
+            <h4>Resource Consumption Rate</h4>
+            <svg>
 
-
+            </svg>
+        </div>
+        <div class="water">
+            <h4>Water Supply</h4>
+        </div>
+        <div class="provision">
+            <h4>Provision Distribution</h4>
+        </div>
+        <div class="resource-variety">
+            <h4>Resource Variety</h4>
+            <div class="variety-wrapper">
+                <div class="pieContainer">
+                    <div class="pieBackground"></div>
+                    <div id="other" class="hold"><div class="pie"></div></div>
+                    <div id="medical" class="hold"><div class="pie"></div></div>
+                    <div id="food" class="hold"><div class="pie"></div></div>
+                    <div id="water" class="hold"><div class="pie"></div></div>
+                    <div class="innerCircle"></div>
+                </div>
+                <div class="variety-key">
+                    <div><h6><div id="food-color"></div>Food</h6><p>35 Types</p></div>
+                    <div><h6><div id="water-color"></div>Water</h6><p>N/A</p></div>
+                    <div><h6><div id="medical-color"></div>Medical Supplies</h6><p>15 Types</p></div>
+                    <div><h6><div id="other-color"></div>Other</h6><p>3 Types</p></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
