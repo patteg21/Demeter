@@ -1,0 +1,17 @@
+.container{
+
+}
+
+.header{
+    background-color: #0d0f0f;
+    text-align: left;
+    padding: 10px 10px 15px 10px;
+    border-radius: 10px;
+    margin: 12px 0px 0px 0px;
+    font-size: 25px;
+}
+
+.header > p{
+    color: #cdcecf;
+    font-size: 15px;
+}

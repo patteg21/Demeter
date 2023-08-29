@@ -77,7 +77,7 @@
 }
 
 .nav-area > h3{
-    color: gray;
+    color: #cdcecf;
     padding: 5px;
     border-radius: 10px;
 }
@@ -95,6 +95,7 @@
 }
 
 .nav-list > li{
+    font-size: 18px;
     padding: 5px 0px 5px 0px;
     margin: 0%;
     list-style: none;
@@ -113,7 +114,7 @@
 }
 
 .nav-list > li > a:hover {
-    color: gray;
+    color: #cdcecf;
   }
 
 

@@ -1,12 +1,19 @@
-.header{
-    margin: 0px;
-    padding: 0px 0px 0px 0px;
-    text-align: center;
+.top-div{
+    padding-bottom: 10px;
 }
 
-.header > h1{
-    border-bottom: 2px solid #1b1d21;
-    padding-bottom: 20px;
+.header{
+    background-color: #0d0f0f;
+    text-align: left;
+    padding: 10px 10px 15px 10px;
+    border-radius: 10px;
+    margin: 12px 0px 0px 0px;
+    font-size: 25px;
+}
+
+.header > p{
+    color: #cdcecf;
+    font-size: 15px;
 }
 
 .dasher-container{
