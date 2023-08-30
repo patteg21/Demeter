@@ -37,24 +37,51 @@
 .demeter-chat{
     text-align: center;
     background-color:  #0d0f0f;
-    padding: 0px 0px 0px 0px;
-    border-radius: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    
 }
 
-.demeter-chat > h1{
+.demeter-chat > div{
+    padding: 10px;
+    background-color:#121619;
+    border-radius: 10px;
+}
+
+.demeter-chat > div > h1{
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
 }
 
 #demeter-output{
     padding: 10px;
+    margin: 0px;
     text-align: left;
     color: #cdcecf;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 18px;
 
 }
+
+.order-form{
+    color: #cdcecf;
+}
+
+.order-form > select{
+    background-color: #0d0f0f;
+    color: #cdcecf;
+    border: 2px solid #0d0f0f;
+}
+
+.order-form > button{
+    background-color: #0d0f0f;
+    color:#cdcecf;
+    border: 2px solid #0d0f0f;
+}
+
+
+
 
 .input-area{
     text-align: left;
@@ -96,13 +123,13 @@
     height: 15px;
 }
 #submit-button:hover{
-    background-color: #cdcecf;
+    background-color: transparent;
 }
 
 
 
 .right-bar{
-    margin: 10px;
+    margin: 0px 10px 0px 0px;
     border-radius: 10px;
     grid-column: 2;
     grid-row: auto;

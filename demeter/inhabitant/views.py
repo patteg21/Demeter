@@ -150,6 +150,7 @@ def home(request):
 
     return render(request,"inhabitant/home.html",{
         "demeterOutput":defaultOutput,
+
         
     })
 

@@ -78,9 +78,31 @@
 
 .nav-area > h3{
     color: #cdcecf;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+    margin: 0px;
 }
+
+
+.core-modules{
+    list-style: none;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+    font-size: 12px;
+}
+
+.core-modules > li{
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.core-modules > li > img{
+    height: 20px;
+    padding-right: 5px;
+}
+
 
 .nav-list{
     font-size: 20px;

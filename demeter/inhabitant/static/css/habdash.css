@@ -1,5 +1,5 @@
 .container{
-
+    color: white;
 }
 
 .header{
@@ -14,4 +14,111 @@
 .header > p{
     color: #cdcecf;
     font-size: 15px;
+}
+
+.sub-header{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.wrapper{
+    padding: 10px;
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: auto(2, 2fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.wrapper > div{
+    background-color: #0d0f0f;
+    border-radius: 10px;
+}
+.wrapper > div > h1{
+    margin: 0px;
+    padding: 10px;
+    color: #cdcecf;
+    font-size: 18px;
+}
+
+.nutrients{
+    grid-column: 1;
+    grid-row: 1/3;
+}   
+
+.macro{
+    grid-column: 1;
+    grid-row: 3/7;
+    grid-template-rows: auto;
+}
+
+.vitamins{
+    grid-column: 2;
+    grid-row: 1/6;
+}
+
+.hydration{
+    grid-column: 2;
+    grid-row: 6/7;
+    position: relative;
+}
+
+.hydration > div{
+    display: inline-flex;
+}
+
+
+.hyrdation-container{
+    margin: 10px;
+    background-image: linear-gradient(white, blue);
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    min-width: 150px; /* Set a minimum width */
+    min-height: 150px; /* Set a minimum height */
+}
+.innerCircle{
+    position: relative;
+    background-color: #0d0f0f;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    left: 15px;
+    top: 15px;
+}
+
+.hydration-status{
+    position: relative;
+    background-color: #0d0f0f;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    left: 15px;
+    bottom: 15px;
+    overflow: hidden;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 40%);
+}
+
+.water-text{
+    display: inline-flex;
+    align-self: center;
+    color: #cdcecf;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+.water-text>p{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.water-text > p > span{
+    color: aquamarine;
+}
+
+.water-text>h5{
+    margin: 0px;
+    padding: 0px;
+    color: #cdcecf;
 }

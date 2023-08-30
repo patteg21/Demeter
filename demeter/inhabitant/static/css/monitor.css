@@ -2,3 +2,46 @@
     text-decoration: none;
     color: white;
 }
+
+.content-wrapper{
+    margin: 10px 0px 0px 0px;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: minmax(100px,auto);
+    
+}
+
+.content-wrapper > div{
+    grid-column: auto;
+    grid-row: auto;
+    background-color:#0d0f0f;
+    border-radius: 10px;
+}
+
+.content-section >h1{
+    margin: 0px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.content-section > h1 > a{
+    color: white;
+}
+
+.content-section > h1 > a:hover{
+    color: #cdcecf;
+}
+
+.content-section > h3{
+    font-size: 15px;
+    color: #b6ef9b;
+    margin: 0px;
+    padding: 0px 10px 10px 10px;
+}
+
+.content-section > ul{
+    list-style: none;
+    margin: 0px;
+    padding: 10px;
+}

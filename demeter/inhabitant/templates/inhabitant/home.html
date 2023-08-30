@@ -11,33 +11,34 @@
     <h1 id="sub-header">Demeter Chat</h1>
     <div class="wrapper-demeter">
         <div class="demeter-chat">
+            <div>
+                <p id="demeter-output">
+                    {{ demeterOutput }}
 
-            <p id="demeter-output">
-                {{ demeterOutput }}
-
-                {% if orderForm %}
-                <form name="demeter-order-food" method="post" action="">
-                    <input type="hidden" name="demeter-order-food" value="demeter-order-food">
-                    {% csrf_token %}
-                    <select title="inhabOptions" name="inhabOptions">
-                        {% for optionInhab in inhabitantOptions %}
-                        <option>{{ optionInhab }}</option>
-                        {% endfor %}
-                    </select>
-                    <select title="mealOptions" name="mealOptions">
-                        {% for optionMeal in mealOptions %}
-                        <option>{{ optionMeal }}</option>
-                        {% endfor %}
-                    </select>
-                    <select title="facilityOptions" name="facilityOptions">
-                        {% for optionFac in facilityOptions %}
-                        <option>{{ optionFac }}</option>
-                        {% endfor %}
-                    </select>
-                    <button type="submit">Order</button>
-                </form>
-                {% endif %} 
-            </p>
+                    {% if orderForm %}
+                    <form class="order-form"name="demeter-order-food" method="post" action="">
+                        <input type="hidden" name="demeter-order-food" value="demeter-order-food">
+                        {% csrf_token %}
+                        <select title="inhabOptions" name="inhabOptions">
+                            {% for optionInhab in inhabitantOptions %}
+                            <option>{{ optionInhab }}</option>
+                            {% endfor %}
+                        </select>
+                        <select title="mealOptions" name="mealOptions">
+                            {% for optionMeal in mealOptions %}
+                            <option>{{ optionMeal }}</option>
+                            {% endfor %}
+                        </select>
+                        <select title="facilityOptions" name="facilityOptions">
+                            {% for optionFac in facilityOptions %}
+                            <option>{{ optionFac }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit">Order</button>
+                    </form>
+                    {% endif %} 
+                </p>
+            </div>
 
             <div class="input-area">
                 <form id="demeter-question" name="demeter-question" action="" method="post" autocomplete="off">

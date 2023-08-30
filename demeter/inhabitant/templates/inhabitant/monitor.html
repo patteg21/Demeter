@@ -3,32 +3,38 @@
 {% block body%}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/monitor.css' %}">
+<div class="home-container">
+    <h1 class="welcome-header">Inhabitant Monitor
+        <p>Coordinate tasks, allocate resources, and support astronaut well-being with real-time chat, provision requests, and profile insights.</p>
+    </h1>
+    <div class="content-wrapper">
+        {% for person in nutrition %}
+        <div class="content-section"> 
+            <h1 class="inhabitant-display"><a href="{% url 'inhabdash' inhabitantID=person.inhabitant.inhabitantID %}" >{{ person.inhabitant.firstName }} {{ person.inhabitant.lastName }}</a></h1>
+            <h3>{{ person.inhabitant.status }}</h3>
+            <ul>
+                <li>ID: {{ person.inhabitant.inhabitantID }}</li>
+                <li>Height: {{ person.inhabitant.height }} inches</li>
+                <li>Weight: {{ person.inhabitant.weight }} pounds</li>
+                <!-- <li>Calories Consumed: {{ person.caloriesConsumed }} calories</li>
+                <li>Fat Consumed: {{ person.fatConsumed }} grams</li>
+                <li>Sodium Consumed: {{ person.sodiumConsumed }} grams</li>
+                <li>Fiber Consumed: {{ person.fiberConsumed }} grams</li>
+                <li>Protein Consumed: {{ person.proteinConsumed }} grams</li> -->
+            </ul>
+        </div>
+        {% endfor %}
 
-
-{% for person in nutrition %}
-<div> 
-<h1 class="inhabitant-display"><a href="{% url 'inhabdash' inhabitantID=person.inhabitant.inhabitantID %}" >{{ person.inhabitant.firstName }} {{ person.inhabitant.lastName }}</a></h1>
-<h3>{{ person.inhabitant.status }}</h3>
-    <ul>
-        <li>ID: {{ person.inhabitant.inhabitantID }}</li>
-        <li>Height: {{ person.inhabitant.height }} inches</li>
-        <li>Weight: {{ person.inhabitant.weight }} pounds</li>
-        <li>Calories Consumed: {{ person.caloriesConsumed }} calories</li>
-        <li>Fat Consumed: {{ person.fatConsumed }} grams</li>
-        <li>Sodium Consumed: {{ person.sodiumConsumed }} grams</li>
-        <li>Fiber Consumed: {{ person.fiberConsumed }} grams</li>
-        <li>Protein Consumed: {{ person.proteinConsumed }} grams</li>
-    </ul>
+        <div class="content-section">
+            <h1>Create New Inhabitant</h1>
+            <h1>{{ method }}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Create Inhabitant</button>
+            </form>
+        </div>
+    </div>  
 </div>
-{% endfor %}
-
-
-<h1>Create New Inhabitant</h1>
-<h1>{{ method }}</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create Inhabitant</button>
-</form>
-
 {% endblock body %}
