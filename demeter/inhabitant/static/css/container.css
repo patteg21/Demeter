@@ -106,6 +106,11 @@
 
 }
 
+.temperature > div{
+    padding: 20px;
+    align-self: center;
+}
+
 
 .available-resources{
     grid-column: 3/5;
@@ -142,7 +147,13 @@
     grid-column: 1/3;
     grid-row: 3/6;
     color:#cdcecf;
+    margin: 0px;
 }
+
+.consumption > div{
+    margin: 0px;
+}
+
 
 
 
@@ -232,6 +243,11 @@
     grid-column: 4;
     grid-row: 3/5;
     color: #cdcecf;
+}
+
+.provision > div{
+    margin: 0px;
+    padding: 20px;
 }
 
 
