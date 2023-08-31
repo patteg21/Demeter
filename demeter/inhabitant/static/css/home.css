@@ -134,6 +134,7 @@
     grid-column: 2;
     grid-row: auto;
     background-color: #0d0f0f;
+    text-align: center;
 }
 
 .right-bar > h1{
@@ -141,4 +142,9 @@
     padding: 10px;
     font-size: 18px;
     color: #cdcecf;
+}
+
+.right-bar > p{
+    padding: 10px;
+    color: #b6ef9b;
 }
