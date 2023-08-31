@@ -63,7 +63,7 @@ def home(request):
 
 
             #message that will be output after
-            demeterCompleteOrder = f"Thanks {inhabitant.firstName}! I will delivery your meal to {facilityChoice}"
+            demeterCompleteOrder = f"I will delivery your meal to {inhabitant.firstName} at {facilityChoice}"
             
             return render(request,"inhabitant/home.html",{
             "demeterOutput":demeterCompleteOrder
@@ -136,7 +136,6 @@ def home(request):
                 "facilityOptions":facilityOptions,
                 "orderForm":orderForm,
             })
-        
         elif topIntent == "getstatus":
             getStatusOutput = demEvents.getStatusDemeter(entities)
             return render(request,"inhabitant/home.html",{

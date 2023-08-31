@@ -104,6 +104,26 @@
     grid-row: 1/6;
 }
 
+#vit-temp{
+    margin: 10px;
+}
+
+#vit-temp > .inhab-info{
+    color: #cdcecf;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%));
+}
+
+#vit-temp > div > h3{
+    font-size: 18px;
+}
+
+
+#vit-temp > div > h3 > p{
+    color: #cdcecf;
+}
 
 
 
@@ -129,6 +149,7 @@
     min-width: 150px; /* Set a minimum width */
     min-height: 150px; /* Set a minimum height */
 }
+
 .innerCircle{
     position: relative;
     background-color: #0d0f0f;
@@ -151,13 +172,15 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 40%);
 }
 
+
 .water-text{
     display: inline-flex;
     align-self: center;
+    text-align: center;
     color: #cdcecf;
     margin: 0px;
     padding: 0px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .water-text>p{
@@ -168,10 +191,4 @@
 
 .water-text > p > span{
     color: aquamarine;
-}
-
-.water-text>h5{
-    margin: 0px;
-    padding: 0px;
-    color: #cdcecf;
 }
